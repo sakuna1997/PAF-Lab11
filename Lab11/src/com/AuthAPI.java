@@ -57,5 +57,12 @@ public class AuthAPI extends HttpServlet {
 		 } 
 		 response.getWriter().write(output); 
 	}
+	
+	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException { 
+			 HttpSession session = request.getSession(); 
+			session.invalidate(); 
+			response.getWriter().write("success"); 
+	}
+
 
 }
